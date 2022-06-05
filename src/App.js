@@ -1,5 +1,5 @@
 import "./App.css";
-import StyledButton from "./components/Button/Button";
+import StyledButton, { FancyButton } from "./components/Button/Button";
 
 function App() {
   return (
@@ -9,6 +9,10 @@ function App() {
         <br />
       </div>
       <StyledButton varient="outline">Styled Button</StyledButton>
+      <div>
+        <br />
+      </div>
+      <FancyButton>Fancy Button</FancyButton>
     </div>
   );
 }
