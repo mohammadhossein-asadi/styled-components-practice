@@ -12,7 +12,9 @@ function App() {
       <div>
         <br />
       </div>
-      <FancyButton>Fancy Button</FancyButton>
+      <FancyButton as={"a"} href="https://google.com">
+        Fancy Button
+      </FancyButton>
     </div>
   );
 }
