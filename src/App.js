@@ -8,30 +8,43 @@ import StyledButton, {
 } from "./components/Button/Button";
 import { AnimatedLogo } from "./components/Button/Button.styles";
 
+const theme = {
+  dark: {
+    primary: "#000",
+    text: "#fff",
+  },
+  light: {
+    primary: "#fff",
+    text: "#000",
+  },
+};
+
 function App() {
   return (
-    <div className="App">
-      {/*<img src={logo} className="App-logo" alt="logo" />*/}
-      <AnimatedLogo src={logo} />
-      <div>
-        <br />
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        {/*<img src={logo} className="App-logo" alt="logo" />*/}
+        <AnimatedLogo src={logo} />
+        <div>
+          <br />
+        </div>
+        <StyledButton type="submit">Styled Button</StyledButton>
+        <div>
+          <br />
+        </div>
+        <StyledButton varient="outline">Styled Button</StyledButton>
+        <div>
+          <br />
+        </div>
+        <FancyButton as={"a"} href="https://google.com">
+          Fancy Button
+        </FancyButton>
+        <div>
+          <br />
+        </div>
+        <SubmitButton>Submit</SubmitButton>
       </div>
-      <StyledButton type="submit">Styled Button</StyledButton>
-      <div>
-        <br />
-      </div>
-      <StyledButton varient="outline">Styled Button</StyledButton>
-      <div>
-        <br />
-      </div>
-      <FancyButton as={"a"} href="https://google.com">
-        Fancy Button
-      </FancyButton>
-      <div>
-        <br />
-      </div>
-      <SubmitButton>Submit</SubmitButton>
-    </div>
+    </ThemeProvider>
   );
 }
 
