@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const StyledButton = styled.button`
   border: 2px solid #4caf50;
-  background-color: #4caf50;
-  color: white;
-  padding: 15px 32px;
+  background-color: ${(props) =>
+    props.varient === "outline" ? "#fff " : "#4caf50"};
+  color: ${(props) => (props.varient === "outline" ? "#4caf50 " : "#fff")};
+  padding: 18px 36px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
