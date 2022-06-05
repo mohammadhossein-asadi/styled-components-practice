@@ -1,4 +1,4 @@
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import logo from "./logo.svg";
 import "./App.css";
 import "./styles.css";
@@ -8,12 +8,15 @@ import StyledButton, {
 } from "./components/Button/Button";
 import { AnimatedLogo, DarkButton } from "./components/Button/Button.styles";
 import { theme } from "./components/Theme/Theme";
-import { GlobalStyle } from "./components/Style/GlobalStyle";
 
+export const GlobalStyle = createGlobalStyle`
+button{
+  font-family: ${(props) => props.theme.fontFamily};
+}
+`;
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
       <div className="App">
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
         <AnimatedLogo src={logo} />
