@@ -6,22 +6,14 @@ import StyledButton, {
   FancyButton,
   SubmitButton,
 } from "./components/Button/Button";
-import { AnimatedLogo } from "./components/Button/Button.styles";
-
-const theme = {
-  dark: {
-    primary: "#000",
-    text: "#fff",
-  },
-  light: {
-    primary: "#fff",
-    text: "#000",
-  },
-};
+import { AnimatedLogo, DarkButton } from "./components/Button/Button.styles";
+import { theme } from "./components/Theme/Theme";
+import { GlobalStyle } from "./components/Style/GlobalStyle";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <div className="App">
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
         <AnimatedLogo src={logo} />
@@ -43,6 +35,10 @@ function App() {
           <br />
         </div>
         <SubmitButton>Submit</SubmitButton>
+        <div>
+          <br />
+        </div>
+        <DarkButton>Dark Theme</DarkButton>
       </div>
     </ThemeProvider>
   );
